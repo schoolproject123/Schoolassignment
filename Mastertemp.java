@@ -24,7 +24,7 @@ public class Mastertemp {
         
         Celcius thermo1 = new Celcius();
         Fahrenheit thermo2 = new Fahrenheit();
-        
+        // Output displayed to user
         System.out.println("Temperature in Celsius = " + temperature1.getTemperature());
        
        
