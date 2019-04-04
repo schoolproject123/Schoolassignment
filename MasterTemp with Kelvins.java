@@ -22,17 +22,16 @@ public class Mastertemp {
        
        
         
-       
+       		//create new object called Celcius with temperature1
         	Celcius thermo1 = new Celcius(temperature1);
+		
+		//create new object called Kelvins with temperature1
         	Kelvins temp = new Kelvins(temperature1);
             
             
-            
+            // Output displayed to user
             System.out.println("Temperature in Celsius = " + thermo1.Conversion());
-          
-       
-        	
-        	 System.out.println("Temperature in Kelvins = " + temp.Conversion());
+            System.out.println("Temperature in Kelvins = " + temp.Conversion());
         
 	}
          
