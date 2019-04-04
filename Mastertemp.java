@@ -1,4 +1,8 @@
-
+/*
+* This program asks a user for a temperature value and converts it from Fahrenheit to Celcius
+* and Kelvin. It receives user's input and sends it to two different classes that do the 
+* convertion. It finally displays the converted temperatures back to the user.
+*/
 
 import java.util.*;
 
