@@ -18,7 +18,8 @@ public class Mastertemp {
         System.out.print("Enter a Temperature in F");
         double temperature1 = input.nextDouble();
         
-        
+        /* Exception Code Block to go here
+	*/
        
        
         
