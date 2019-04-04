@@ -20,8 +20,11 @@ public class Mastertemp {
         
         /* Exception Code Block to go here
 	*/
+		
        
-       
+	/* Code Block for reading/writing to a file
+	*/
+		
         
        		//create new object called Celcius with temperature1
         	Celcius thermo1 = new Celcius(temperature1);
@@ -33,6 +36,7 @@ public class Mastertemp {
             // Output displayed to user
             System.out.println("Temperature in Celsius = " + thermo1.Conversion());
             System.out.println("Temperature in Kelvins = " + temp.Conversion());
+		
         
 	}
          
