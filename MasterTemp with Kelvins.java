@@ -4,8 +4,11 @@
 * and Kelvin. It receives user's input and sends it to two different classes that do the 
 * convertion. It finally displays the converted temperatures back to the user.
 */
+
+// Import Java Utilities
 import java.util.*;
 
+//Master class for program
 public class Mastertemp {
 
 	
@@ -38,11 +41,11 @@ public class Mastertemp {
             System.out.println("Temperature in Kelvins = " + temp.Conversion());
 		
         
-	}
+}
          
        
        
-	}
+}
 
 	
 
