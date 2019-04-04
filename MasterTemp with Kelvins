@@ -1,0 +1,39 @@
+
+
+import java.util.*;
+
+public class Mastertemp {
+
+	
+	public static void main(String[] args) {
+		// Create scanner
+        Scanner input = new Scanner(System.in);
+        
+        //User inputs a temperature for C or F. 
+        
+        System.out.print("Enter a Temperature in F");
+        double temperature1 = input.nextDouble();
+        
+        
+       
+       
+        
+       
+        	Celcius thermo1 = new Celcius(temperature1);
+        	Kelvins temp = new Kelvins(temperature1);
+            
+            
+            
+            System.out.println("Temperature in Celsius = " + thermo1.Conversion());
+          
+       
+        	
+        	 System.out.println("Temperature in Kelvins = " + temp.Conversion());
+        
+	}
+         
+       
+       
+	}
+
+
