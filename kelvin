@@ -4,8 +4,8 @@
  *
  */
  
- //new class Kelvins subclass of Celcius
-public class Kelvins extends Celcius {
+ //new class Kelvins
+public class Kelvins {
 
 //new variable temperature of double
 double temperature; 
