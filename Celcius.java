@@ -8,17 +8,27 @@
 public class Celcius {
 	
 	// Base temp set for celcius  
-	double Temperature = 35; 
+	double Temperature; 
 		
 
 	
 		// Calculation performed to turn a user input into a temp in Celcius 
-		double getTemperature() {
-		return ((Temperature - 32)*5)/9;
-		
-		
-		
+		Celcius() {
+	
+	}
+	Celcius(double newTemperature) {
+		temperature = newTemperature;
+	}
 
-   }
+	
+		
+	double Conversion() {
+		return (temperature - 32) * 5/9;
+	}
+	void set(double newTemperature) {
+		temperature = newTemperature;
+	}
 
 }
+
+	
