@@ -16,29 +16,43 @@ public class Mastertemp {
 		// Create scanner
         Scanner input = new Scanner(System.in);
         
-        //User inputs a temperature for F. 
+
         
-        System.out.print("Enter a Temperature in F");
-        double temperature1 = input.nextDouble();
+       
         
-        /* Exception Code Block to go here
-	*/
+      
 		
        
 	/* Code Block for reading/writing to a file
 	*/
-		
+		  try {
+			  
+			  //User inputs a temperature for F. 
+        	 System.out.print("Enter a Temperature in F");
+            	 double temperature1 = input.nextDouble();
+			  
+			  //create new object called Celcius with temperature1
+            	 Celcius thermo1 = new Celcius(temperature1);
+			  
+			  //create new object called Kelvins with temperature1
+         	Kelvins temp = new Kelvins(temperature1);
+			  
+			  //Output the conversions
+         	 System.out.println("Temperature in Celsius = " + thermo1.Conversion());
+      		  System.out.println("Temperature in Kelvins = " + temp.Conversion());
+
+		}
+		//check if input is wrong
+		catch(InputMismatchException ex) {
+			System.out.println("Enter a Number");
+			input.nextLine();
+		}
+       
         
-       		//create new object called Celcius with temperature1
-        	Celcius thermo1 = new Celcius(temperature1);
-		
-		//create new object called Kelvins with temperature1
-        	Kelvins temp = new Kelvins(temperature1);
+       		
             
             
-            // Output displayed to user
-            System.out.println("Temperature in Celsius = " + thermo1.Conversion());
-            System.out.println("Temperature in Kelvins = " + temp.Conversion());
+          
 		
         
 }
