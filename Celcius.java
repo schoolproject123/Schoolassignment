@@ -11,20 +11,23 @@ public class Celcius {
 	double Temperature; 
 		
 
-	
-		// Calculation performed to turn a user input into a temp in Celcius 
+		//Create Object
 		Celcius() {
 	
 	}
+	
+	//create Constructors
 	Celcius(double newTemperature) {
 		temperature = newTemperature;
 	}
 
 	
-		
+	//Convert from Farenheit to Celcius
 	double Conversion() {
 		return (temperature - 32) * 5/9;
 	}
+	
+	//create void method
 	void set(double newTemperature) {
 		temperature = newTemperature;
 	}
