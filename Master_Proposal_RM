@@ -1,0 +1,103 @@
+/*
+* This program asks a user for a temperature value and converts it from Fahrenheit to Celcius
+* and Kelvin. It receives user's input and sends it to two different classes that do the 
+* convertion. It finally displays the converted temperatures back to the user.
+*/
+
+// Import Java Utilities
+import java.util.*;
+
+public class MasterTemp {
+
+	
+	public static void main(String[] args) {
+		// Create scanner object
+        Scanner input = new Scanner(System.in);
+        
+        // Defining variables to be used by the program
+        boolean continueInput = true; 	// Boolean variables to determine if keeps asking for a right number
+        boolean validRange = false;		
+        double temperature1 = 0;		// Variable for registering the user's input for temperature
+        double temperature2 = 0;		// Variable for registering the user's input for temperature
+        double sum = 0;					// Variable to calculate a value to sum with from temperature 1 to 2
+         
+    // Get and verify user's input
+    System.out.println("This is a Temperature Convertion Program");
+		System.out.println("Enter a range of temperatures in Fahrenheit.");
+		System.out.println("Range must be between 212° (Voiling point of water)" +
+							"\nAnd 32° (Melting point of ice)" );
+		
+        do {
+
+        	try {
+        		System.out.print("Low range temperature: ");
+        		temperature1 = input.nextDouble();
+        		if (temperature1 >= 0 && temperature1 <= 212) {
+        			continueInput = false;
+        			validRange = true;
+        			}
+        		else {
+        			throw new InputMismatchException();
+        			
+        			}
+        	}	
+        	//check if input is wrong
+        	catch(InputMismatchException ex) {
+            	System.out.println("The input must be a Number within the range." +
+            				"\nPlease try again.");
+            	input.nextLine();
+            	}
+        	
+            }while (continueInput && !validRange);
+        		
+        		
+        do {
+        	try {
+        		continueInput = true;
+    			validRange = false;
+        		System.out.print("High range temperature: ");
+        		temperature2 = input.nextDouble();
+        		if (temperature2 >= temperature1 && temperature2 <= 212) {
+        			continueInput = false;
+        			}
+        		else {
+        			throw new InputMismatchException();
+        			
+        			}
+        	}	
+        	//check if input is wrong
+        	catch(InputMismatchException ex) {
+            	System.out.println("The input must be a number within the range that is." +
+            				"\ngreater than the low range temperature number. Please try again.");
+            	input.nextLine();
+            	}
+        	
+            }while (continueInput && !validRange);
+        		
+        // Create array of 10 elements
+        sum = (temperature2 - temperature1) / 10;	
+        double[] temperatureArray = new double[10];
+        temperatureArray[0] = temperature1;
+        temperatureArray[9] = temperature2;
+        		      		
+        // Fill the array of temperatures
+        for (int i=1; i < temperatureArray.length-1 && temperatureArray[i] < temperature2; i++) {
+        	temperatureArray[i] = temperatureArray[i-1] + sum;
+        	System.out.println(temperatureArray[i]);	
+        	}
+        	
+       	}
+        	
+ 	/*
+        // Create two objects           
+        Celcius thermo1 = new Celcius(temperature1);
+    	Kelvins thermo2 = new Kelvins(temperature1);
+        
+	// Displays output to user	
+        System.out.println("Temperature in Celsius = " + thermo1.conversion());
+        System.out.println("Temperature in Kelvins = " + thermo2.conversion());
+      */ 
+       
+	}
+
+
