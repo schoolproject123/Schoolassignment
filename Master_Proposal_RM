@@ -1,16 +1,12 @@
-/*
-* This program asks a user for a temperature value and converts it from Fahrenheit to Celcius
-* and Kelvin. It receives user's input and sends it to two different classes that do the 
-* convertion. It finally displays the converted temperatures back to the user.
-*/
-
-// Import Java Utilities
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.*;
 
 public class MasterTemp {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// Create scanner object
         Scanner input = new Scanner(System.in);
         
@@ -21,7 +17,7 @@ public class MasterTemp {
         double temperature2 = 0;		// Variable for registering the user's input for temperature
         double sum = 0;					// Variable to calculate a value to sum with from temperature 1 to 2
          
-    // Get and verify user's input
+    // Get and verify user's input ------- Dustin / Rafael 
     System.out.println("This is a Temperature Convertion Program");
 		System.out.println("Enter a range of temperatures in Fahrenheit.");
 		System.out.println("Range must be between 212° (Voiling point of water)" +
@@ -41,7 +37,7 @@ public class MasterTemp {
         			
         			}
         	}	
-        	//check if input is wrong
+        	//check if input is wrong ------ Gabe 
         	catch(InputMismatchException ex) {
             	System.out.println("The input must be a Number within the range." +
             				"\nPlease try again.");
@@ -65,7 +61,7 @@ public class MasterTemp {
         			
         			}
         	}	
-        	//check if input is wrong
+        	//check if input is wrong ----- Gabe
         	catch(InputMismatchException ex) {
             	System.out.println("The input must be a number within the range that is." +
             				"\ngreater than the low range temperature number. Please try again.");
@@ -74,19 +70,36 @@ public class MasterTemp {
         	
             }while (continueInput && !validRange);
         		
-        // Create array of 10 elements
+        // Create array of 10 elements ----- Rafael 
         sum = (temperature2 - temperature1) / 10;	
         double[] temperatureArray = new double[10];
         temperatureArray[0] = temperature1;
         temperatureArray[9] = temperature2;
         		      		
-        // Fill the array of temperatures
+        // Fill the array of temperatures ----- Rafael
         for (int i=1; i < temperatureArray.length-1 && temperatureArray[i] < temperature2; i++) {
         	temperatureArray[i] = temperatureArray[i-1] + sum;
         	System.out.println(temperatureArray[i]);	
+        	
+        //Write to file ------Dustin 
+       java.io.File saveData = new java.io.File("Temperatures.txt");
+        	if (saveData.exists()) {
+        		System.out.println("This file already exists");
+        		System.exit(1);
+        	}
+        	java.io.PrintWriter output = new java.io.PrintWriter(saveData);
+        	output.println(temperature1);
+        	output.println(temperature2);
+        	output.println(temperatureArray);
+        	
+        	//close the write
+        	output.close();
+        	 }
         	}
         	
-       	}
+       	
+	}
+
         	
  	/*
         // Create two objects           
@@ -98,6 +111,6 @@ public class MasterTemp {
         System.out.println("Temperature in Kelvins = " + thermo2.conversion());
       */ 
        
-	}
+	
 
 
